@@ -4,20 +4,19 @@ import './TextField.css';
 
 import { cnTextField } from './TextField.classname';
 
+export interface ITextFieldProps {
+    limit?: number;
+}
 
 const DEFAULT_VALUE = '';
-const limit = 10;
 
-export const TextField = () => {
-    const [remaindSymbols, setRemaindSymbols] = useState(limit);
+export const TextField: React.FC<ITextFieldProps> = ({ limit }) => {
     const [text, setText] = useState(DEFAULT_VALUE);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const newText = event.target.value.slice(0, 10);
+        const newText = event.target.value.slice(0, limit);
         
         setText(newText);
-
-        setRemaindSymbols(limit - newText.length);
     };
 
 
@@ -29,7 +28,7 @@ export const TextField = () => {
                 value={text}
                 onChange={handleChange}
             />
-            <div className={cnTextField('RemaindSymbols')}>{remaindSymbols}</div>
+            {limit && <div className={cnTextField('RemaindSymbols')}>{limit - text.length}</div>}
         </div>
     );
 }

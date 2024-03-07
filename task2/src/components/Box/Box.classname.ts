@@ -1,3 +1,4 @@
 import { cn } from '@bem-react/classname';
 
-export const cnBox = cn('Box');
+export const cnJumper = cn('Jumper');
+

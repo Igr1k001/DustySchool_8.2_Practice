@@ -1,14 +1,21 @@
-.Box-Blue {
-    width: 50px;
-    height: 50px;
-    background-color: blue;
-    transition: 3s linear;
+.Jumper {
+    display: flex;
+    transition: all 3s linear;
 }
-.Box-Red {
+.Jumper_position_start {
+    flex-grow: 0;
+}
+.Jumper_position_end {
+    flex-grow: 1;
+}
+.Jumper-Box {
     width: 50px;
     height: 50px;
+    transition: all 3s linear;
+}
+.Jumper-Box_color_blue {
+    background-color: blue;
+}
+.Jumper-Box_color_red {
     background-color: red;
-    margin-right: auto;
-    margin-left: 1390px;
-    transition: 3s linear;
 }

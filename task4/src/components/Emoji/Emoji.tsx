@@ -19,34 +19,11 @@ export const Emoji = () => {
 
     const handleCLick = () => {
         setNumberClick(numberClick + 1);
-
-        // switch (numberClick) {
-        //     case 3: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        //     case 6: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        //     case 9: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        //     case 12: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        //     case 15: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        //     case 18: 
-        //         setContent(emojiObj[numberClick]);
-        //         break;
-        // }
-
         const emoji = emojiObj[numberClick];
 
         if (emoji) {
             setContent(emoji);
         }
-        // setContent(emojiObj[numberClick]);
     };
 
     return (

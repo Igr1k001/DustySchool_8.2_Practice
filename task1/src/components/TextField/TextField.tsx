@@ -4,13 +4,12 @@ import './TextField.css';
 
 import { cnTextField } from './TextField.classname';
 
-export interface ITextFieldProps {
-
-}
+import StatusAlert, { StatusAlertService } from 'react-status-alert'
+import 'react-status-alert/dist/status-alert.css'
 
 const DEFAULT_VALUE = '';
 
-export const TextField: React.FC<ITextFieldProps> = ({ }) => {
+export const TextField = () => {
     const [sumNumber, setSumNumber] = useState(0);
     const [text, setText] = useState(DEFAULT_VALUE);
 
@@ -22,18 +21,17 @@ export const TextField: React.FC<ITextFieldProps> = ({ }) => {
         let addNumber = Number(text);
 
         if (isNaN(addNumber)) {
-            alert('Введено не число');
+            StatusAlertService.showError('Вы ввели не число');
         } else {
-            setSumNumber(sumNumber + addNumber);
+            setSumNumber((prev) => prev + addNumber);
         }
 
         setText(DEFAULT_VALUE);
     };
 
-
-
     return (
         <div className={cnTextField()}>
+            <StatusAlert/>
             <input
                 className={cnTextField('Input')}
                 value={text}
